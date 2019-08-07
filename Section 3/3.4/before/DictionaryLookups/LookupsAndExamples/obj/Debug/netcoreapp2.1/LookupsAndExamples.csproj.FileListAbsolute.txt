@@ -1,0 +1,10 @@
+/Users/jamesmillar/Documents/Source/CognitiveServices/Dictionary/DictionaryLookups/LookupsAndExamples/bin/Debug/netcoreapp2.1/LookupsAndExamples.deps.json
+/Users/jamesmillar/Documents/Source/CognitiveServices/Dictionary/DictionaryLookups/LookupsAndExamples/bin/Debug/netcoreapp2.1/LookupsAndExamples.runtimeconfig.json
+/Users/jamesmillar/Documents/Source/CognitiveServices/Dictionary/DictionaryLookups/LookupsAndExamples/bin/Debug/netcoreapp2.1/LookupsAndExamples.runtimeconfig.dev.json
+/Users/jamesmillar/Documents/Source/CognitiveServices/Dictionary/DictionaryLookups/LookupsAndExamples/bin/Debug/netcoreapp2.1/LookupsAndExamples.dll
+/Users/jamesmillar/Documents/Source/CognitiveServices/Dictionary/DictionaryLookups/LookupsAndExamples/bin/Debug/netcoreapp2.1/LookupsAndExamples.pdb
+/Users/jamesmillar/Documents/Source/CognitiveServices/Dictionary/DictionaryLookups/LookupsAndExamples/obj/Debug/netcoreapp2.1/LookupsAndExamples.csproj.CoreCompileInputs.cache
+/Users/jamesmillar/Documents/Source/CognitiveServices/Dictionary/DictionaryLookups/LookupsAndExamples/obj/Debug/netcoreapp2.1/LookupsAndExamples.AssemblyInfoInputs.cache
+/Users/jamesmillar/Documents/Source/CognitiveServices/Dictionary/DictionaryLookups/LookupsAndExamples/obj/Debug/netcoreapp2.1/LookupsAndExamples.AssemblyInfo.cs
+/Users/jamesmillar/Documents/Source/CognitiveServices/Dictionary/DictionaryLookups/LookupsAndExamples/obj/Debug/netcoreapp2.1/LookupsAndExamples.dll
+/Users/jamesmillar/Documents/Source/CognitiveServices/Dictionary/DictionaryLookups/LookupsAndExamples/obj/Debug/netcoreapp2.1/LookupsAndExamples.pdb
