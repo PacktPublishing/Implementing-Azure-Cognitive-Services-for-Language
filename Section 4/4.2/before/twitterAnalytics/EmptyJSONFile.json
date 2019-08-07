@@ -1,0 +1,63 @@
+﻿
+{
+  "PII": {
+    "Email": [
+      {
+        "Detected": "abcdef@abcd.com",
+        "SubType": "Regular",
+        "Text": "abcdef@abcd.com",
+        "Index": 32
+      }
+    ],
+    "IPA": [
+      {
+        "SubType": "IPV4",
+        "Text": "255.255.255.255",
+        "Index": 72
+      }
+    ],
+    "Phone": [
+      {
+        "CountryCode": "US",
+        "Text": "6657789887",
+        "Index": 56
+      },
+      {
+        "CountryCode": "US",
+        "Text": "870 608 4000",
+        "Index": 212
+      },
+      {
+        "CountryCode": "UK",
+        "Text": "+44 870 608 4000",
+        "Index": 208
+      },
+      {
+        "CountryCode": "UK",
+        "Text": "0344 800 2400",
+        "Index": 228
+      },
+      {
+        "CountryCode": "UK",
+        "Text": "0800 820 3300",
+        "Index": 245
+      }
+    ],
+    "Address": [
+      {
+        "Text": "1 Microsoft Way, Redmond, WA 98052",
+        "Index": 89
+      }
+    ],
+    "SSN": [
+      {
+        "Text": "999999999",
+        "Index": 56
+      },
+      {
+        "Text": "999-99-9999",
+        "Index": 267
+      }
+    ]
+  }
+}
