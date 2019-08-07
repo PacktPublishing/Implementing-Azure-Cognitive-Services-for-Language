@@ -1,0 +1,745 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Azure.CognitiveServices.Language.LUIS</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.ApiKeyServiceClientCredentials">
+            <summary>
+            Allows authentication to the API using a basic apiKey mechanism
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.ApiKeyServiceClientCredentials.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the ApiKeyServiceClientCredentails class
+            </summary>
+            <param name="subscriptionKey">The subscription key to authenticate and authorize as</param>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.ApiKeyServiceClientCredentials.ProcessHttpRequestAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            Add the Basic Authentication Header to each outgoing request
+            </summary>
+            <param name="request">The outgoing request</param>
+            <param name="cancellationToken">A token to cancel the operation</param>
+        </member>
+        <member name="T:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.ILUISRuntimeClient">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.ILUISRuntimeClient.SerializationSettings">
+            <summary>
+            The base URI of the service.
+            </summary>
+            <summary>
+            Gets or sets json serialization settings.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.ILUISRuntimeClient.DeserializationSettings">
+            <summary>
+            Gets or sets json deserialization settings.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.ILUISRuntimeClient.Endpoint">
+            <summary>
+            Supported Cognitive Services endpoints (protocol and hostname, for
+            example: https://westus.api.cognitive.microsoft.com).
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.ILUISRuntimeClient.Credentials">
+            <summary>
+            Subscription credentials which uniquely identify client
+            subscription.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.ILUISRuntimeClient.Prediction">
+            <summary>
+            Gets the IPrediction.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.IPrediction">
+            <summary>
+            Prediction operations.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.IPrediction.ResolveWithHttpMessagesAsync(System.String,System.String,System.Nullable{System.Double},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.String,System.Nullable{System.Boolean},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.String}},System.Threading.CancellationToken)">
+            <summary>
+            Gets predictions for a given utterance, in the form of intents and
+            entities. The current maximum query size is 500 characters.
+            </summary>
+            <param name='appId'>
+            The LUIS application ID (Guid).
+            </param>
+            <param name='query'>
+            The utterance to predict.
+            </param>
+            <param name='timezoneOffset'>
+            The timezone offset for the location of the request.
+            </param>
+            <param name='verbose'>
+            If true, return all intents instead of just the top scoring intent.
+            </param>
+            <param name='staging'>
+            Use the staging endpoint slot.
+            </param>
+            <param name='spellCheck'>
+            Enable spell checking.
+            </param>
+            <param name='bingSpellCheckSubscriptionKey'>
+            The subscription key to use when enabling bing spell check
+            </param>
+            <param name='log'>
+            Log query (default is true)
+            </param>
+            <param name='customHeaders'>
+            The headers that will be added to request.
+            </param>
+            <param name='cancellationToken'>
+            The cancellation token.
+            </param>
+            <exception cref="T:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.APIErrorException">
+            Thrown when the operation returned an invalid status code
+            </exception>
+            <exception cref="T:Microsoft.Rest.SerializationException">
+            Thrown when unable to deserialize the response
+            </exception>
+            <exception cref="T:Microsoft.Rest.ValidationException">
+            Thrown when a required parameter is null
+            </exception>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.LUISRuntimeClient.BaseUri">
+            <summary>
+            The base URI of the service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.LUISRuntimeClient.SerializationSettings">
+            <summary>
+            Gets or sets json serialization settings.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.LUISRuntimeClient.DeserializationSettings">
+            <summary>
+            Gets or sets json deserialization settings.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.LUISRuntimeClient.Endpoint">
+            <summary>
+            Supported Cognitive Services endpoints (protocol and hostname, for example:
+            https://westus.api.cognitive.microsoft.com).
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.LUISRuntimeClient.Credentials">
+            <summary>
+            Subscription credentials which uniquely identify client subscription.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.LUISRuntimeClient.Prediction">
+            <summary>
+            Gets the IPrediction.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.LUISRuntimeClient.#ctor(System.Net.Http.HttpClient,System.Boolean)">
+            <summary>
+            Initializes a new instance of the LUISRuntimeClient class.
+            </summary>
+            <param name='httpClient'>
+            HttpClient to be used
+            </param>
+            <param name='disposeHttpClient'>
+            True: will dispose the provided httpClient on calling LUISRuntimeClient.Dispose(). False: will not dispose provided httpClient</param>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.LUISRuntimeClient.#ctor(System.Net.Http.DelegatingHandler[])">
+            <summary>
+            Initializes a new instance of the LUISRuntimeClient class.
+            </summary>
+            <param name='handlers'>
+            Optional. The delegating handlers to add to the http client pipeline.
+            </param>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.LUISRuntimeClient.#ctor(System.Net.Http.HttpClientHandler,System.Net.Http.DelegatingHandler[])">
+            <summary>
+            Initializes a new instance of the LUISRuntimeClient class.
+            </summary>
+            <param name='rootHandler'>
+            Optional. The http client handler used to handle http transport.
+            </param>
+            <param name='handlers'>
+            Optional. The delegating handlers to add to the http client pipeline.
+            </param>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.LUISRuntimeClient.#ctor(Microsoft.Rest.ServiceClientCredentials,System.Net.Http.DelegatingHandler[])">
+            <summary>
+            Initializes a new instance of the LUISRuntimeClient class.
+            </summary>
+            <param name='credentials'>
+            Required. Subscription credentials which uniquely identify client subscription.
+            </param>
+            <param name='handlers'>
+            Optional. The delegating handlers to add to the http client pipeline.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when a required parameter is null
+            </exception>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.LUISRuntimeClient.#ctor(Microsoft.Rest.ServiceClientCredentials,System.Net.Http.HttpClient,System.Boolean)">
+            <summary>
+            Initializes a new instance of the LUISRuntimeClient class.
+            </summary>
+            <param name='credentials'>
+            Required. Subscription credentials which uniquely identify client subscription.
+            </param>
+            <param name='httpClient'>
+            HttpClient to be used
+            </param>
+            <param name='disposeHttpClient'>
+            True: will dispose the provided httpClient on calling LUISRuntimeClient.Dispose(). False: will not dispose provided httpClient</param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when a required parameter is null
+            </exception>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.LUISRuntimeClient.#ctor(Microsoft.Rest.ServiceClientCredentials,System.Net.Http.HttpClientHandler,System.Net.Http.DelegatingHandler[])">
+            <summary>
+            Initializes a new instance of the LUISRuntimeClient class.
+            </summary>
+            <param name='credentials'>
+            Required. Subscription credentials which uniquely identify client subscription.
+            </param>
+            <param name='rootHandler'>
+            Optional. The http client handler used to handle http transport.
+            </param>
+            <param name='handlers'>
+            Optional. The delegating handlers to add to the http client pipeline.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when a required parameter is null
+            </exception>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.LUISRuntimeClient.Initialize">
+            <summary>
+            Initializes client properties.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.APIError">
+            <summary>
+            Error information returned by the API
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.APIError.#ctor">
+            <summary>
+            Initializes a new instance of the APIError class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.APIError.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the APIError class.
+            </summary>
+            <param name="statusCode">HTTP Status code</param>
+            <param name="message">Cause of the error.</param>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.APIError.StatusCode">
+            <summary>
+            Gets or sets HTTP Status code
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.APIError.Message">
+            <summary>
+            Gets or sets cause of the error.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.APIErrorException">
+            <summary>
+            Exception thrown for an invalid response with APIError information.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.APIErrorException.Request">
+            <summary>
+            Gets information about the associated HTTP request.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.APIErrorException.Response">
+            <summary>
+            Gets information about the associated HTTP response.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.APIErrorException.Body">
+            <summary>
+            Gets or sets the body object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.APIErrorException.#ctor">
+            <summary>
+            Initializes a new instance of the APIErrorException class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.APIErrorException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the APIErrorException class.
+            </summary>
+            <param name="message">The exception message.</param>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.APIErrorException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the APIErrorException class.
+            </summary>
+            <param name="message">The exception message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="T:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.CompositeChildModel">
+            <summary>
+            Child entity in a LUIS Composite Entity.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.CompositeChildModel.#ctor">
+            <summary>
+            Initializes a new instance of the CompositeChildModel class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.CompositeChildModel.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the CompositeChildModel class.
+            </summary>
+            <param name="type">Type of child entity.</param>
+            <param name="value">Value extracted by LUIS.</param>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.CompositeChildModel.Type">
+            <summary>
+            Gets or sets type of child entity.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.CompositeChildModel.Value">
+            <summary>
+            Gets or sets value extracted by LUIS.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.CompositeChildModel.Validate">
+            <summary>
+            Validate the object.
+            </summary>
+            <exception cref="T:Microsoft.Rest.ValidationException">
+            Thrown if validation fails
+            </exception>
+        </member>
+        <member name="T:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.CompositeEntityModel">
+            <summary>
+            LUIS Composite Entity.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.CompositeEntityModel.#ctor">
+            <summary>
+            Initializes a new instance of the CompositeEntityModel class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.CompositeEntityModel.#ctor(System.String,System.String,System.Collections.Generic.IList{Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.CompositeChildModel})">
+            <summary>
+            Initializes a new instance of the CompositeEntityModel class.
+            </summary>
+            <param name="parentType">Type/name of parent entity.</param>
+            <param name="value">Value for composite entity extracted by
+            LUIS.</param>
+            <param name="children">Child entities.</param>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.CompositeEntityModel.ParentType">
+            <summary>
+            Gets or sets type/name of parent entity.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.CompositeEntityModel.Value">
+            <summary>
+            Gets or sets value for composite entity extracted by LUIS.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.CompositeEntityModel.Children">
+            <summary>
+            Gets or sets child entities.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.CompositeEntityModel.Validate">
+            <summary>
+            Validate the object.
+            </summary>
+            <exception cref="T:Microsoft.Rest.ValidationException">
+            Thrown if validation fails
+            </exception>
+        </member>
+        <member name="T:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityModel">
+            <summary>
+            An entity extracted from the utterance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityModel.#ctor">
+            <summary>
+            Initializes a new instance of the EntityModel class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityModel.#ctor(System.String,System.String,System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Initializes a new instance of the EntityModel class.
+            </summary>
+            <param name="entity">Name of the entity, as defined in
+            LUIS.</param>
+            <param name="type">Type of the entity, as defined in LUIS.</param>
+            <param name="startIndex">The position of the first character of the
+            matched entity within the utterance.</param>
+            <param name="endIndex">The position of the last character of the
+            matched entity within the utterance.</param>
+            <param name="additionalProperties">Unmatched properties from the
+            message are deserialized this collection</param>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityModel.AdditionalProperties">
+            <summary>
+            Gets or sets unmatched properties from the message are deserialized
+            this collection
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityModel.Entity">
+            <summary>
+            Gets or sets name of the entity, as defined in LUIS.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityModel.Type">
+            <summary>
+            Gets or sets type of the entity, as defined in LUIS.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityModel.StartIndex">
+            <summary>
+            Gets or sets the position of the first character of the matched
+            entity within the utterance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityModel.EndIndex">
+            <summary>
+            Gets or sets the position of the last character of the matched
+            entity within the utterance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityModel.Validate">
+            <summary>
+            Validate the object.
+            </summary>
+            <exception cref="T:Microsoft.Rest.ValidationException">
+            Thrown if validation fails
+            </exception>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityWithResolution.#ctor">
+            <summary>
+            Initializes a new instance of the EntityWithResolution class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityWithResolution.#ctor(System.String,System.String,System.Int32,System.Int32,System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Initializes a new instance of the EntityWithResolution class.
+            </summary>
+            <param name="entity">Name of the entity, as defined in
+            LUIS.</param>
+            <param name="type">Type of the entity, as defined in LUIS.</param>
+            <param name="startIndex">The position of the first character of the
+            matched entity within the utterance.</param>
+            <param name="endIndex">The position of the last character of the
+            matched entity within the utterance.</param>
+            <param name="resolution">Resolution values for pre-built LUIS
+            entities.</param>
+            <param name="additionalProperties">Unmatched properties from the
+            message are deserialized this collection</param>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityWithResolution.Resolution">
+            <summary>
+            Gets or sets resolution values for pre-built LUIS entities.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityWithResolution.Validate">
+            <summary>
+            Validate the object.
+            </summary>
+            <exception cref="T:Microsoft.Rest.ValidationException">
+            Thrown if validation fails
+            </exception>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityWithScore.#ctor">
+            <summary>
+            Initializes a new instance of the EntityWithScore class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityWithScore.#ctor(System.String,System.String,System.Int32,System.Int32,System.Double,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Initializes a new instance of the EntityWithScore class.
+            </summary>
+            <param name="entity">Name of the entity, as defined in
+            LUIS.</param>
+            <param name="type">Type of the entity, as defined in LUIS.</param>
+            <param name="startIndex">The position of the first character of the
+            matched entity within the utterance.</param>
+            <param name="endIndex">The position of the last character of the
+            matched entity within the utterance.</param>
+            <param name="score">Associated prediction score for the intent
+            (float).</param>
+            <param name="additionalProperties">Unmatched properties from the
+            message are deserialized this collection</param>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityWithScore.Score">
+            <summary>
+            Gets or sets associated prediction score for the intent (float).
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityWithScore.Validate">
+            <summary>
+            Validate the object.
+            </summary>
+            <exception cref="T:Microsoft.Rest.ValidationException">
+            Thrown if validation fails
+            </exception>
+        </member>
+        <member name="T:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.IntentModel">
+            <summary>
+            An intent detected from the utterance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.IntentModel.#ctor">
+            <summary>
+            Initializes a new instance of the IntentModel class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.IntentModel.#ctor(System.String,System.Nullable{System.Double})">
+            <summary>
+            Initializes a new instance of the IntentModel class.
+            </summary>
+            <param name="intent">Name of the intent, as defined in
+            LUIS.</param>
+            <param name="score">Associated prediction score for the intent
+            (float).</param>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.IntentModel.Intent">
+            <summary>
+            Gets or sets name of the intent, as defined in LUIS.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.IntentModel.Score">
+            <summary>
+            Gets or sets associated prediction score for the intent (float).
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.IntentModel.Validate">
+            <summary>
+            Validate the object.
+            </summary>
+            <exception cref="T:Microsoft.Rest.ValidationException">
+            Thrown if validation fails
+            </exception>
+        </member>
+        <member name="T:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.LuisResult">
+            <summary>
+            Prediction, based on the input query, containing intent(s) and
+            entities.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.LuisResult.#ctor">
+            <summary>
+            Initializes a new instance of the LuisResult class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.LuisResult.#ctor(System.String,System.String,Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.IntentModel,System.Collections.Generic.IList{Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.IntentModel},System.Collections.Generic.IList{Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.EntityModel},System.Collections.Generic.IList{Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.CompositeEntityModel},Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.Sentiment,Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.LuisResult)">
+            <summary>
+            Initializes a new instance of the LuisResult class.
+            </summary>
+            <param name="query">The input utterance that was analyzed.</param>
+            <param name="alteredQuery">The corrected utterance (when spell
+            checking was enabled).</param>
+            <param name="intents">All the intents (and their score) that were
+            detected from utterance.</param>
+            <param name="entities">The entities extracted from the
+            utterance.</param>
+            <param name="compositeEntities">The composite entities extracted
+            from the utterance.</param>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.LuisResult.Query">
+            <summary>
+            Gets or sets the input utterance that was analyzed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.LuisResult.AlteredQuery">
+            <summary>
+            Gets or sets the corrected utterance (when spell checking was
+            enabled).
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.LuisResult.TopScoringIntent">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.LuisResult.Intents">
+            <summary>
+            Gets or sets all the intents (and their score) that were detected
+            from utterance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.LuisResult.Entities">
+            <summary>
+            Gets or sets the entities extracted from the utterance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.LuisResult.CompositeEntities">
+            <summary>
+            Gets or sets the composite entities extracted from the utterance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.LuisResult.SentimentAnalysis">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.LuisResult.ConnectedServiceResult">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.LuisResult.Validate">
+            <summary>
+            Validate the object.
+            </summary>
+            <exception cref="T:Microsoft.Rest.ValidationException">
+            Thrown if validation fails
+            </exception>
+        </member>
+        <member name="T:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.Sentiment">
+            <summary>
+            Sentiment of the input utterance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.Sentiment.#ctor">
+            <summary>
+            Initializes a new instance of the Sentiment class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.Sentiment.#ctor(System.String,System.Nullable{System.Double})">
+            <summary>
+            Initializes a new instance of the Sentiment class.
+            </summary>
+            <param name="label">The polarity of the sentiment, can be positive,
+            neutral or negative.</param>
+            <param name="score">Score of the sentiment, ranges from 0 (most
+            negative) to 1 (most positive).</param>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.Sentiment.Label">
+            <summary>
+            Gets or sets the polarity of the sentiment, can be positive,
+            neutral or negative.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.Sentiment.Score">
+            <summary>
+            Gets or sets score of the sentiment, ranges from 0 (most negative)
+            to 1 (most positive).
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Prediction">
+            <summary>
+            Prediction operations.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Prediction.#ctor(Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.LUISRuntimeClient)">
+            <summary>
+            Initializes a new instance of the Prediction class.
+            </summary>
+            <param name='client'>
+            Reference to the service client.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when a required parameter is null
+            </exception>
+        </member>
+        <member name="P:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Prediction.Client">
+            <summary>
+            Gets a reference to the LUISRuntimeClient
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Prediction.ResolveWithHttpMessagesAsync(System.String,System.String,System.Nullable{System.Double},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.String,System.Nullable{System.Boolean},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.String}},System.Threading.CancellationToken)">
+            <summary>
+            Gets predictions for a given utterance, in the form of intents and
+            entities. The current maximum query size is 500 characters.
+            </summary>
+            <param name='appId'>
+            The LUIS application ID (Guid).
+            </param>
+            <param name='query'>
+            The utterance to predict.
+            </param>
+            <param name='timezoneOffset'>
+            The timezone offset for the location of the request.
+            </param>
+            <param name='verbose'>
+            If true, return all intents instead of just the top scoring intent.
+            </param>
+            <param name='staging'>
+            Use the staging endpoint slot.
+            </param>
+            <param name='spellCheck'>
+            Enable spell checking.
+            </param>
+            <param name='bingSpellCheckSubscriptionKey'>
+            The subscription key to use when enabling bing spell check
+            </param>
+            <param name='log'>
+            Log query (default is true)
+            </param>
+            <param name='customHeaders'>
+            Headers that will be added to request.
+            </param>
+            <param name='cancellationToken'>
+            The cancellation token.
+            </param>
+            <exception cref="T:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models.APIErrorException">
+            Thrown when the operation returned an invalid status code
+            </exception>
+            <exception cref="T:Microsoft.Rest.SerializationException">
+            Thrown when unable to deserialize the response
+            </exception>
+            <exception cref="T:Microsoft.Rest.ValidationException">
+            Thrown when a required parameter is null
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when a required parameter is null
+            </exception>
+            <return>
+            A response object containing the response body and response headers.
+            </return>
+        </member>
+        <member name="T:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.PredictionExtensions">
+            <summary>
+            Extension methods for Prediction.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.PredictionExtensions.ResolveAsync(Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.IPrediction,System.String,System.String,System.Nullable{System.Double},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.String,System.Nullable{System.Boolean},System.Threading.CancellationToken)">
+            <summary>
+            Gets predictions for a given utterance, in the form of intents and
+            entities. The current maximum query size is 500 characters.
+            </summary>
+            <param name='operations'>
+            The operations group for this extension method.
+            </param>
+            <param name='appId'>
+            The LUIS application ID (Guid).
+            </param>
+            <param name='query'>
+            The utterance to predict.
+            </param>
+            <param name='timezoneOffset'>
+            The timezone offset for the location of the request.
+            </param>
+            <param name='verbose'>
+            If true, return all intents instead of just the top scoring intent.
+            </param>
+            <param name='staging'>
+            Use the staging endpoint slot.
+            </param>
+            <param name='spellCheck'>
+            Enable spell checking.
+            </param>
+            <param name='bingSpellCheckSubscriptionKey'>
+            The subscription key to use when enabling bing spell check
+            </param>
+            <param name='log'>
+            Log query (default is true)
+            </param>
+            <param name='cancellationToken'>
+            The cancellation token.
+            </param>
+        </member>
+    </members>
+</doc>
